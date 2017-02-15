@@ -1,0 +1,37 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Jabatan extends CI_Controller{
+	
+	public function __construct(){
+		
+		parent::__construct();
+		if(!$this->session->userdata('is_login'))redirect('login');
+	}
+	
+	public function index(){
+	    
+	    $data = array('title'=>'Jabatan - Hilios Power');
+	    
+	    $this->load->view('header',$data);
+	    $this->load->view('sidebar');
+	    $this->load->view('jabatan');
+	    $this->load->view('footer');
+		
+	}
+	
+	
+	public function add(){
+	    
+	    $data = $this->input->post(null,true);
+	    	   
+	}
+	
+	public function save(){
+	    
+	    
+	}
+	
+	
+
+
+}

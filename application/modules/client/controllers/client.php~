@@ -1,0 +1,26 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class List_client extends CI_Controller{
+	
+	public function __construct(){
+		
+		parent::__construct();
+		if(!$this->session->userdata('is_login'))redirect('login');
+		if(!$this->general->privilege_check(CLIENT,'view'))
+		    $this->general->no_access();
+		$this->session->set_userdata('menu','client');	
+	}
+	
+	public function index(){
+	    
+	    $data = array('title'=>'List Client - Hilios Power');
+	    
+	    $this->load->view('header',$data);
+	    $this->load->view('sidebar');
+	    $this->load->view('home');
+	    $this->load->view('footer');
+		
+	}
+
+
+}

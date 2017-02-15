@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login</title>
+
+    <!-- Core CSS - Include with every page -->
+    <link href="<?php echo base_url();?>assets/css/bootstrap.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>assets/css/back.css" rel="stylesheet">
+
+</head>
+
+<body id="login">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><i class="fa fa-lock"></i> SISFO MARKETING </h3>
+                        
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" method="post" action="<?php echo base_url();?>login/do_login">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Username" name="username" type="username" autofocus>
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Password" name="password" type="password" value="">
+                                </div>
+                               
+                                <!-- Change this to a button or input when using this as a form -->
+                                <span style="color:#d32132"><?php echo isset($message) ? $message:'';?></span>
+                                <div class="pull-right" style="padding-top:30px"> <button type="submit" class="btn btn-info">&nbsp;&nbsp;Login&nbsp;&nbsp;</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Core Scripts - Include with every page -->
+    
+    <script src="<?php echo base_url();?>assets/js/bootstrap.js"></script>
+    <script src="<?php echo base_url();?>assets/js/plugins/metisMenu/jquery.metisMenu.js"></script>
+
+    <!-- SB Admin Scripts - Include with every page -->
+    <script src="<?php echo base_url();?>assets/js/back.js"></script>
+
+</body>
+
+</html>
+

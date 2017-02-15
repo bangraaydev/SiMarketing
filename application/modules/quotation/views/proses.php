@@ -1,0 +1,218 @@
+<style>
+.btn{margin-top: -7px!important;} /*override*/
+</style>
+<div id="page-wrapper">
+   <div class="row">
+        <div class="col-lg-12">
+        
+            <div class="panel panel-info">
+                <div class="panel-heading">
+                    Add Quotation
+                </div>
+                <div class="panel-body">
+                    <form role="form" class="form-horizontal" method="post" action="<?php echo base_url();?>quotation/do_proses">
+                    
+                       <div class="col-lg-5">  
+                        <div class="form-group">
+                           <label class="col-sm-3">To</label>
+                           <div class="col-lg-8">
+                            <input type="hidden" name="id_client" id="id_client" class="form-control" value="<?php echo $id_client;?>">
+                            <input type="hidden" name="initial_client" id="initial_client" value="<?php echo $initial_client;?>"  class="form-control" >
+                            <input type="text" name="to" id="to" value="<?php echo $to;?>" readonly class="form-control" required>
+                           </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-sm-3">Company</label>
+                            <div class="col-lg-8">
+                            <input type="text" name="company" class="form-control" value="<?php echo $company;?>" readonly required>
+                            </div>
+                        </div>
+                       </div>
+                        <div class="col-lg-5">  
+                        <div class="form-group">
+                           <label class="col-sm-3">No Telp</label>
+                           <div class="col-lg-8">
+                            <input type="text" name="no_telp" class="form-control" value="<?php echo $no_telp;?>" readonly required>
+                           </div>
+                         </div>
+                         <div class="form-group">
+                            <label class="col-sm-3">Email</label>
+                            <div class="col-lg-8">
+                            <input type="email" name="email" class="form-control" value="<?php echo $email;?>" readonly required>
+                            </div>
+                        </div>
+                       </div>
+                        <div class="col-lg-12"> <hr/> </div>
+                        <div class="col-lg-5">  
+                         <div class="form-group">
+                             
+                            <label class="col-sm-3">From</label>
+                            <div class="col-lg-8">
+                              <input type="hidden" name="id_sales" value="<?php echo $id_sales;?>" required id="id_sales" class="form-control" >
+                              <input type="text" name="sales" id="sales" class="form-control" value="<?php echo $sales;?>" readonly required>
+                            </div> 
+                         </div>
+                         <div class="form-group">
+                             <label class="col-lg-3">Subject </label>
+                             <div class="col-lg-8">
+                               <input type="text" name="subject" class="form-control" value="<?php echo $subject;?>" readonly required>
+                             </div>
+                         </div>
+                        
+                          <div class="form-group">
+                            <label class="col-lg-3">Date</label>
+                            <div class="col-lg-8">
+                              <input type="text" name="date" class="form-control" readonly value="<?php echo date('d M Y');?>">
+                            </div>
+                          </div>
+                      </div>
+                      
+                      <div class="col-lg-5">  
+                         <div class="form-group">
+                             
+                            <label class="col-sm-3">Ph No</label>
+                            <div class="col-lg-8">
+                              <input type="text" name="sales" id="sales" class="form-control" required>
+                            </div> 
+                         </div>
+                         <div class="form-group">
+                             <label class="col-lg-3">Fax No </label>
+                             <div class="col-lg-8">
+                               <input type="text" name="subject" class="form-control" required>
+                             </div>
+                         </div>
+                        
+                          <div class="form-group">
+                            <label class="col-lg-3">Ref No</label>
+                            <div class="col-lg-8">
+                              <input type="text" name="date" class="form-control" value="<?php echo $no_ref;?>" readonly>
+                            </div>
+                          </div>
+                      </div>
+                      <div class="col-lg-12"> <hr/> </div>
+                       <div class="col-lg-8">  
+                         <div class="form-group">
+                         <label class="col-sm-3">Area</label>
+                            <div class="col-lg-5">
+                              <input type="text" name="area" id="area" class="form-control" required>
+                             <a href="javascript:void(0)" onClick="lock_area()"  id="lock_area"><i class="fa fa-check"></i> Proses</a><a href="javascript:void(0)" onClick="ganti_area()" id="ganti_area" style="display:none"><i class="fa fa-pencil"></i> Ganti</a>
+                            </div> 
+                             
+                         </div>
+                         
+                         <div class="form-group">
+                         <label class="col-sm-3">Item Code</label>
+                            <div class="col-lg-5">
+                              <input type="text" name="item_code" id="item_code" class="form-control" required>
+                            </div> 
+                         </div>
+                         <div class="form-group">
+                         <label class="col-sm-3">Customer Desc</label>
+                            <div class="col-lg-8">
+                              <input type="text" name="client_desc" id="client_desc" class="form-control" required>
+                            </div> 
+                         </div>
+                         <div class="form-group">
+                         <label class="col-sm-3">Hilios Desc</label>
+                            <div class="col-lg-8">
+                              <input type="text" name="hilios_desc" id="hilios_desc" class="form-control" required>
+                            </div> 
+                         </div>
+                         
+                         <div class="form-group">
+                         <label class="col-sm-3">Qty</label>
+                            <div class="col-lg-5">
+                              <input type="number" name="item_code" id="item_code" class="form-control" required>
+                            </div> 
+                         </div>
+                       </div>  
+                       
+                       <div class="col-lg-12"> <hr/> </div>
+                       
+                       <div class="col-lg-12">
+                        
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <b>VALAS</b>
+                                <a class="btn btn-success pull-right" title="Add PIC" onclick="add_pic();"><i class="fa fa-plus"></i> Add</a>
+                            </div>
+                            <!-- /.panel-heading -->
+                            <div class="panel-body">
+                            
+                            <table class="table" id="pic-table">
+                             <thead>
+                                <tr>
+                                    <th>SKU</th>
+                                    <th>Desc</th>
+                                    <th>Qty</th>
+                                    <th>Unit</th>
+                                    <th>Harga</th>
+                                </tr>
+                             <thead>
+                             <tbody>
+                                <tr>
+                                    <td><input name="data2[0][sku]" class="form-control" id="sku0" required></td>
+                                    <td><input name="data2[0][desc]" class="form-control" id="desc0" required></td>
+                                    <td><input name="data2[0][qty]" type="number" class="form-control" id="qty0" required></td>
+                                    <td><input name="data2[0][unit]" type="text" class="form-control" id="unit0" required></td>
+                                    <td><input name="data2[0][harga0]" type="number" class="form-control" id="harga0" required></td>
+                                    <td>
+                                      
+                                    </td>
+                                  
+                                </tr>
+                             </tbody>
+                            </table>
+                            <button class="btn btn-default">Submit</button>
+                         </div>
+                       </div>
+                       
+                       
+                    </form>
+                </div>
+               
+            </div>
+        
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+function lock_area(){
+    
+    if($("#area").val()!=''){
+        
+        $("#area").attr('readonly','readonly');
+        $("#ganti_area").show();
+        $("#lock_area").hide();
+    }
+    return false;
+}
+function ganti_area(){
+
+     $("#area").removeAttr('readonly');
+     $("#ganti_area").hide();
+     $("#lock_area").show();
+    
+}
+function del_pic(id){
+
+    $("#pic-table tbody #pic_row"+id).remove();
+}
+$j=1;
+function add_pic(){
+
+    var $pic =  '<tr id="pic_row'+$j+'">'+
+                    '<td><input name="data2['+$j+'][sku]" class="form-control" id="sku'+$j+'"></td>'+
+                    '<td><input name="data2['+$j+'][desc]" class="form-control" id="desc'+$j+'"></td>'+
+                    '<td><input name="data2['+$j+'][qty]" type="number" class="form-control" id="qty'+$j+'"></td>'+
+                    '<td><input name="data2['+$j+'][unit]" type="text" class="form-control" id="unit'+$j+'"></td>'+
+                    '<td><input name="data2['+$j+'][harga]" type="number" class="form-control" id="harga'+$j+'"></td>'+
+                    '<td><a href="javascript:;" title="Remove" onclick="del_pic('+$j+');" class="a-danger"><i class="fa fa-times"></i> &nbsp;</a>'+
+                   
+                    
+                    '</tr>';
+                   
+   $("#pic-table tbody").append($pic);
+ ++$j;
+}
+</script>
